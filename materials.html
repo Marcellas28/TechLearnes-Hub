@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Marcellas Indeje | Coming Soon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>/* Variables */
+:root {
+  --color-background: #0A1931;
+  --color-gradient: #3A0CA3;
+  --color-accent: #D00070;
+  --color-text: #FFFFFF;
+  --color-text-muted: rgba(255, 255, 255, 0.7);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Montserrat', sans-serif;
+  --transition: all 0.3s ease;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --border-radius: 8px;
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-primary);
+  background: linear-gradient(135deg, var(--color-background) 0%, #0D0221 100%);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/png;base64,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');
+  opacity: 0.05;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Particles Container */
+.particles-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Loading Container */
+.loading-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  padding: clamp(1rem, 5vw, 2rem);
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* Logo Container */
+.logo-container {
+  text-align: center;
+  width: 100%;
+}
+
+.logo-text {
+  font-family: var(--font-secondary);
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+  animation-delay: var(--delay);
+  background: linear-gradient(135deg, var(--color-text) 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.space {
+  width: 0.5em;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading Animation */
+.loading-animation {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.circle-pulse {
+  width: clamp(50px, 15vw, 80px);
+  height: clamp(50px, 15vw, 80px);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-gradient) 0%, var(--color-accent) 100%);
+  box-shadow: 0 0 30px rgba(208, 0, 112, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(208, 0, 112, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 clamp(10px, 5vw, 20px) rgba(208, 0, 112, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(208, 0, 112, 0);
+  }
+}
+
+.loading-bar {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loading-progress {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-gradient) 0%, var(--color-accent) 100%);
+  border-radius: 2px;
+  transition: width 0.5s ease;
+}
+
+/* Status Text */
+.status-text {
+  font-size: clamp(1.125rem, 4vw, 1.5rem);
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.still {
+  color: var(--color-text-muted);
+}
+
+.working {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.on-it {
+  color: var(--color-text-muted);
+}
+
+.dots {
+  display: inline-flex;
+}
+
+.dot {
+  animation: dotPulse 1.5s infinite;
+  animation-delay: var(--dot-delay);
+}
+
+@keyframes dotPulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Countdown Container */
+.countdown-container {
+  text-align: center;
+  width: 100%;
+}
+
+.countdown-text {
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.25rem, 1vw, 0.5rem);
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: clamp(40px, 10vw, 60px);
+}
+
+.countdown-value {
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--color-text) 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.countdown-label {
+  font-size: clamp(0.625rem, 1.5vw, 0.75rem);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.countdown-separator {
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-top: -0.5rem;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(35px, 8vw, 40px);
+  height: clamp(35px, 8vw, 40px);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color-text);
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  transition: var(--transition);
+  border: 1px solid var(--color-border);
+}
+
+.social-link:hover {
+  background-color: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(208, 0, 112, 0.3);
+}
+
+/* Notify Container */
+.notify-container {
+  text-align: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.notify-container p {
+  margin-bottom: 1rem;
+  color: var(--color-text-muted);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.notify-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.form-input-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  flex-direction: row;
+}
+
+.notify-form input {
+  flex: 1;
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 2vw, 1rem);
+  border-radius: var(--border-radius);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  font-family: var(--font-primary);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.notify-form input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.notify-form button {
+  padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+  border-radius: var(--border-radius);
+  background: linear-gradient(135deg, var(--color-gradient) 0%, var(--color-accent) 100%);
+  color: var(--color-text);
+  border: none;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.notify-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(208, 0, 112, 0.3);
+}
+
+.form-message {
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  min-height: 1.5rem;
+}
+
+/* Floating Shapes */
+.floating-shapes {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(58, 12, 163, 0.2) 0%, rgba(208, 0, 112, 0.2) 100%);
+  border-radius: 50%;
+  animation: float 15s infinite ease-in-out;
+}
+
+.shape-1 {
+  width: clamp(50px, 10vw, 100px);
+  height: clamp(50px, 10vw, 100px);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: clamp(75px, 15vw, 150px);
+  height: clamp(75px, 15vw, 150px);
+  top: 20%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: clamp(35px, 7vw, 70px);
+  height: clamp(35px, 7vw, 70px);
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.shape-4 {
+  width: clamp(60px, 12vw, 120px);
+  height: clamp(60px, 12vw, 120px);
+  bottom: 10%;
+  right: 15%;
+  animation-delay: 6s;
+}
+
+.shape-5 {
+  width: clamp(40px, 8vw, 80px);
+  height: clamp(40px, 8vw, 80px);
+  top: 40%;
+  left: 50%;
+  animation-delay: 8s;
+}
+
+.shape-6 {
+  width: clamp(30px, 6vw, 60px);
+  height: clamp(30px, 6vw, 60px);
+  bottom: 40%;
+  right: 30%;
+  animation-delay: 10s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .form-input-wrapper {
+    flex-direction: column;
+  }
+  
+  .notify-form button {
+    width: 100%;
+  }
+  
+  .countdown {
+    gap: 0.25rem;
+  }
+  
+  .countdown-separator {
+    margin: 0 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-container {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .countdown-item {
+    min-width: 35px;
+  }
+  
+  .countdown-label {
+    font-size: 0.6rem;
+  }
+  
+  /* Reduce particles for better performance on mobile */
+  #particles-js {
+    opacity: 0.5;
+  }
+}
+
+/* Ensure content is visible on very small screens */
+@media (max-width: 320px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .logo-text {
+    font-size: 1.75rem;
+  }
+  
+  .social-links {
+    gap: 0.75rem;
+  }
+  
+  .social-link {
+    width: 30px;
+    height: 30px;
+    font-size: 0.875rem;
+  }
+}
+
+/* Landscape mode adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+  .loading-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .circle-pulse {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .countdown-container {
+    margin: 0.5rem 0;
+  }
+  
+  .social-links {
+    margin-top: 0.5rem;
+  }
+  
+  .notify-container p {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* High-resolution screens */
+@media (min-width: 1440px) {
+  html {
+    font-size: 18px;
+  }
+  
+  .loading-container {
+    max-width: 1000px;
+  }
+}</style>
+    </head>
+<body>
+    <div class="noise-overlay"></div>
+    
+    <div class="particles-container" id="particles-js"></div>
+    
+    <div class="loading-container">
+        <div class="logo-container">
+            <div class="logo-text">
+                <span class="letter" style="--delay: 0s;">M</span>
+                <span class="letter" style="--delay: 0.1s;">a</span>
+                <span class="letter" style="--delay: 0.2s;">r</span>
+                <span class="letter" style="--delay: 0.3s;">c</span>
+                <span class="letter" style="--delay: 0.4s;">e</span>
+                <span class="letter" style="--delay: 0.5s;">l</span>
+                <span class="letter" style="--delay: 0.6s;">l</span>
+                <span class="letter" style="--delay: 0.7s;">a</span>
+                <span class="letter" style="--delay: 0.8s;">s</span>
+                <span class="letter space" style="--delay: 0.9s;"></span>
+                <span class="letter" style="--delay: 1s;">I</span>
+                <span class="letter" style="--delay: 1.1s;">n</span>
+                <span class="letter" style="--delay: 1.2s;">d</span>
+                <span class="letter" style="--delay: 1.3s;">e</span>
+                <span class="letter" style="--delay: 1.4s;">j</span>
+                <span class="letter" style="--delay: 1.5s;">e</span>
+            </div>
+        </div>
+        
+        <div class="loading-animation">
+            <div class="circle-pulse"></div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loading-progress"></div>
+            </div>
+        </div>
+        
+        <div class="status-text">
+            <span class="still">Still</span>
+            <span class="working">Working</span>
+            <span class="on-it">on it</span>
+            <span class="dots">
+                <span class="dot" style="--dot-delay: 0s;">.</span>
+                <span class="dot" style="--dot-delay: 0.3s;">.</span>
+                <span class="dot" style="--dot-delay: 0.6s;">.</span>
+            </span>
+        </div>
+        
+        <div class="countdown-container">
+            <div class="countdown-text">Launching in</div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-value" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-separator">:</div>
+                <div class="countdown-item">
+                    <div class="countdown-value" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://x.com/DANWITS1" class="social-link" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/marcellas_dan/" class="social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/marcellus-dan-27627831a/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B1ZLfe0RaR663Fq3trTujJg%3D%3D" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Marcellas28" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+        
+        
+    
+    <div class="floating-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+        <div class="shape shape-6"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script > // Initialize when the document is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Check if device is mobile for performance optimization
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+  
+  // Initialize particles.js with device-appropriate  || window.innerWidth < 768;
+  
+  // Initialize particles.js with device-appropriate settings
+  initParticles(isMobile);
+  
+  // Initialize loading progress animation
+  initLoadingProgress();
+  
+  // Initialize countdown timer
+  initCountdown();
+  
+  // Initialize notification form
+  initNotifyForm();
+  
+  // Check for viewport size changes and adjust accordingly
+  window.addEventListener('resize', handleResize);
+});
+
+// Initialize particles.js with performance optimizations for mobile
+function initParticles(isMobile) {
+  if (typeof particlesJS !== 'undefined') {
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": isMobile ? 30 : 80, // Reduce particles on mobile
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ffffff"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.3,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": isMobile ? 0.5 : 1, // Slower animation on mobile
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": true,
+            "speed": isMobile ? 1 : 2, // Slower animation on mobile
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": !isMobile, // Disable lines on mobile for better performance
+          "distance": 150,
+          "color": "#ffffff",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": isMobile ? 0.5 : 1, // Slower movement on mobile
+          "direction": "none",
+          "random": true,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": !isMobile, // Disable hover effects on mobile
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 0.5
+            }
+          },
+          "bubble": {
+            "distance": 400,
+            "size": 40,
+            "duration": 2,
+            "opacity": 8,
+            "speed": 3
+          },
+          "repulse": {
+            "distance": 200,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": isMobile ? 2 : 4 // Push fewer particles on mobile
+          },
+          "remove": {
+            "particles_nb": 2
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  }
+}
+
+// Initialize loading progress animation
+function initLoadingProgress() {
+  const progressBar = document.getElementById('loading-progress');
+  let width = 0;
+  
+  // Simulate loading progress
+  const interval = setInterval(() => {
+    if (width >= 100) {
+      clearInterval(interval);
+    } else {
+      width += Math.random() * 3; // Random increment for more natural loading
+      if (width > 100) width = 100;
+      progressBar.style.width = width + '%';
+    }
+  }, 200);
+}
+
+// Initialize countdown timer
+function initCountdown() {
+  // Set the launch date (30 days from now)
+  const now = new Date();
+  const launchDate = new Date(now);
+  launchDate.setDate(now.getDate() + 30);
+  
+  // Update the countdown every second
+  updateCountdown(launchDate);
+  setInterval(() => updateCountdown(launchDate), 1000);
+}
+
+function updateCountdown(launchDate) {
+  const now = new Date();
+  const difference = launchDate - now;
+  
+  // Calculate days, hours, minutes, seconds
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+  
+  // Update the DOM
+  document.getElementById('days').textContent = days.toString().padStart(2, '0');
+  document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+  document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+  document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
+
+// Initialize notification form
+function initNotifyForm() {
+  const form = document.getElementById('notify-form');
+  const formMessage = document.getElementById('form-message');
+  
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = form.querySelector('input[type="email"]').value;
+      
+      // Simulate form submission
+      formMessage.textContent = 'Sending...';
+      formMessage.style.color = 'var(--color-text-muted)';
+      
+      // Simulate API call with timeout
+      setTimeout(() => {
+        formMessage.textContent = 'Thank you! We\'ll notify you when we launch.';
+        formMessage.style.color = '#00c853';
+        form.reset();
+      }, 1500);
+    });
+  }
+}
+
+// Add some random movement to the floating shapes for more dynamic effect
+function animateShapes() {
+  const shapes = document.querySelectorAll('.shape');
+  const isMobile = window.innerWidth < 768;
+  
+  shapes.forEach(shape => {
+    // Smaller movements on mobile devices
+    const movementScale = isMobile ? 0.5 : 1;
+    const randomX = (Math.random() - 0.5) * 20 * movementScale;
+    const randomY = (Math.random() - 0.5) * 20 * movementScale;
+    const randomDelay = Math.random() * 2;
+    const randomDuration = 3 + Math.random() * 5;
+    
+    shape.style.transform = `translate(${randomX}px, ${randomY}px)`;
+    shape.style.transition = `transform ${randomDuration}s ease-in-out ${randomDelay}s`;
+  });
+  
+  setTimeout(animateShapes, 5000);
+}
+
+// Handle resize events for responsive adjustments
+function handleResize() {
+  const isMobile = window.innerWidth < 768;
+  
+  // Reinitialize particles with appropriate settings
+  if (typeof particlesJS !== 'undefined') {
+    initParticles(isMobile);
+  }
+  
+  // Adjust any other responsive elements if needed
+  const shapes = document.querySelectorAll('.shape');
+  shapes.forEach(shape => {
+    // Reset transitions for immediate response
+    shape.style.transition = 'none';
+    shape.offsetHeight; // Force reflow
+    shape.style.transition = '';
+  });
+}
+
+// Start the shape animation
+animateShapes();</script>
+</body>
+</html>
