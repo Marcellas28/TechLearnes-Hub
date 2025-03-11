@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Details - TechLearners</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TechLearn</span>Hub
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="materials.html">Courses</a></li>
+                        <li><a href="materials.html" class="active">Materials</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="search.html" class="icon-button">
+                        <i class="fas fa-search"></i>
+                        <span class="sr-only">Search</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline">Log in</a>
+                    <a href="signup.html" class="btn btn-primary">Sign up</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="material-detail-section">
+                <div class="container">
+                    <div class="material-detail-grid">
+                        <!-- Left column - Image and basic info -->
+                        <div class="material-sidebar">
+                            <div class="material-image">
+                                <img id="material-image" src="https://placehold.co/500x300" alt="Material Image">
+                            </div>
+                            <div class="material-badges" id="material-badges">
+                                <!-- Badges will be added dynamically -->
+                            </div>
+                            <div class="material-price" id="material-price">$29.99</div>
+                            
+                            <div id="purchase-section">
+                                <button class="btn btn-primary btn-block" id="purchase-button">Purchase Now</button>
+                                <div class="purchase-info">
+                                    <p>Secure payment via PayPal or M-Pesa</p>
+                                </div>
+                            </div>
+                            
+                            <div id="purchased-section" style="display: none;">
+                                <div class="alert alert-success">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div>
+                                        <h4>Purchase Complete</h4>
+                                        <p>You now have full access to this material.</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-primary btn-block" id="download-button">
+                                    <i class="fas fa-download"></i> Download PDF
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Right column - Content -->
+                        <div class="material-content">
+                            <h1 id="material-title">Material Title</h1>
+                            <p id="material-description" class="material-description">Material description will be loaded here.</p>
+                            
+                            <div class="tabs">
+                                <div class="tabs-list">
+                                    <button class="tab-button active" data-tab="preview">Preview</button>
+                                    <button class="tab-button" data-tab="details">Details</button>
+                                    <button class="tab-button" data-tab="reviews">Reviews</button>
+                                </div>
+                                
+                                <div class="tab-content active" id="preview-tab">
+                                    <div class="content-card">
+                                        <div class="content-card-header">
+                                            <h3>Document Preview</h3>
+                                            <div class="preview-badge">
+                                                <i class="fas fa-eye"></i> Preview only
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="content-card-body">
+                                            <div id="preview-content" class="preview-content">
+                                                <!-- Preview content will be loaded here -->
+                                            </div>
+                                            
+                                            <div id="locked-content" class="locked-content">
+                                                <div class="locked-overlay">
+                                                    <i class="fas fa-lock"></i>
+                                                    <h3>Full Content Locked</h3>
+                                                    <p>Purchase this material to access the full content</p>
+                                                    <button class="btn btn-primary" id="locked-purchase-button">Purchase Now</button>
+                                                </div>
+                                                <div class="locked-preview">
+                                                    <p id="full-content-preview">Full content will be available after purchase.</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div id="full-content" class="full-content" style="display: none;">
+                                                <h3>Full Content</h3>
+                                                <div id="full-content-text">
+                                                    <!-- Full content will be loaded here after purchase -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-content" id="details-tab">
+                                    <div class="content-card">
+                                        <h3>Material Details</h3>
+                                        <div class="details-grid">
+                                            <div class="details-item">
+                                                <h4>Category</h4>
+                                                <p id="detail-category">Mathematics</p>
+                                            </div>
+                                            <div class="details-item">
+                                                <h4>Level</h4>
+                                                <p id="detail-level">Advanced</p>
+                                            </div>
+                                            <div class="details-item">
+                                                <h4>Format</h4>
+                                                <p>PDF Document</p>
+                                            </div>
+                                            <div class="details-item">
+                                                <h4>Pages</h4>
+                                                <p>45</p>
+                                            </div>
+                                            <div class="details-item">
+                                                <h4>Last Updated</h4>
+                                                <p>March 15, 2023</p>
+                                            </div>
+                                            <div class="details-item">
+                                                <h4>Language</h4>
+                                                <p>English</p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="what-youll-learn">
+                                            <h4>What You'll Learn</h4>
+                                            <ul>
+                                                <li>Comprehensive understanding of key concepts</li>
+                                                <li>Exam techniques and strategies</li>
+                                                <li>Practice with real exam-style questions</li>
+                                                <li>Step-by-step solutions to complex problems</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="tab-content" id="reviews-tab">
+                                    <div class="content-card">
+                                        <h3>Student Reviews</h3>
+                                        <div class="reviews-list">
+                                            <div class="review-item">
+                                                <div class="review-header">
+                                                    <div class="reviewer-name">Sarah J.</div>
+                                                    <div class="review-date">2 weeks ago</div>
+                                                </div>
+                                                <p>This material was incredibly helpful for my exam preparation. The explanations are clear and the practice questions really helped me understand the concepts.</p>
+                                            </div>
+                                            <div class="review-item">
+                                                <div class="review-header">
+                                                    <div class="reviewer-name">Kyle Bradley.</div>
+                                                    <div class="review-date">1 month ago</div>
+                                                </div>
+                                                <p>Excellent resource! The content is well-structured and covers all the topics I needed for my course. Highly recommended.</p>
+                                            </div>
+                                            <div class="review-item">
+                                                <div class="review-header">
+                                                    <div class="reviewer-name">Njoroge Samuel.</div>
+                                                    <div class="review-date">2 months ago</div>
+                                                </div>
+                                                <p>Worth every penny. The detailed explanations and practice problems helped me improve my grade significantly.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="related-materials">
+                                <h3>Related Materials</h3>
+                                <div class="related-materials-grid" id="related-materials-container">
+                                    <!-- Related materials will be loaded dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+         <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>TechLearners <span>Hub</span></h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="materials.html">Courses</a></li>
+                            <li><a href="materials.html">Materials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                  
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="https://www.youtube.com/@TechhubSolutions-b2d">Youtube</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> TechLearners Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="payment-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Complete Your Purchase</h2>
+                <p id="payment-item-name">Material Title</p>
+            </div>
+            <div class="modal-body">
+                <div class="tabs">
+                    <div class="tabs-list">
+                        <button class="tab-button active" data-tab="payment-method">Payment Method</button>
+                        <button class="tab-button" data-tab="payment-review">Review</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="payment-method-tab">
+                        <div class="payment-methods">
+                            <div class="payment-method">
+                                <input type="radio" id="card-payment" name="payment-method" value="card" checked>
+                                <label for="card-payment">
+                                    <i class="fas fa-credit-card"></i> Credit/Debit Card
+                                </label>
+                            </div>
+                            <div class="payment-method">
+                                <input type="radio" id="mpesa-payment" name="payment-method" value="mpesa">
+                                <label for="mpesa-payment">
+                                    <i class="fas fa-mobile-alt"></i> M-Pesa
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div id="card-payment-form">
+                            <div class="form-group">
+                                <label for="card-name">Name on Card</label>
+                                <input type="text" id="card-name" placeholder="John Smith" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="card-number">Card Number</label>
+                                <input type="text" id="card-number" placeholder="4242 4242 4242 4242" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="card-expiry">Expiry Date</label>
+                                    <input type="text" id="card-expiry" placeholder="MM/YY" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-cvc">CVC</label>
+                                    <input type="text" id="card-cvc" placeholder="123" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="mpesa-payment-form" style="display: none;">
+                            <div class="form-group">
+                                <label for="phone-number">Phone Number</label>
+                                <input type="text" id="phone-number" placeholder="+254 7XX XXX XXX" required>
+                            </div>
+                            <p class="payment-info">You will receive an M-Pesa prompt on your phone to complete the payment.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="payment-review-tab">
+                        <div class="payment-summary">
+                            <div class="summary-item">
+                                <span>Item:</span>
+                                <span id="summary-item-name">Material Title</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Price:</span>
+                                <span id="summary-price">$29.99</span>
+                            </div>
+                            <div class="summary-item">
+                                <span>Payment Method:</span>
+                                <span id="summary-payment-method">Credit/Debit Card</span>
+                            </div>
+                            <div class="summary-total">
+                                <span>Total:</span>
+                                <span id="summary-total">$29.99</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="cancel-payment">Cancel</button>
+                <button class="btn btn-primary" id="complete-payment">Complete Purchase</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

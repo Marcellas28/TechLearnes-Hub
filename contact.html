@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TechLearners</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TechLearners</span>Hub
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="materials.html">Courses</a></li>
+                        <li><a href="materials.html">Materials</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="search.html" class="icon-button">
+                        <i class="fas fa-search"></i>
+                        <span class="sr-only">Search</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline">Log in</a>
+                    <a href="signup.html" class="btn btn-primary">Sign up</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="contact-hero-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h1>Contact Us</h1>
+                        <p>Have questions or feedback? We'd love to hear from you.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <div class="container">
+                    <div class="contact-grid">
+                        <!-- Contact Form -->
+                        <div class="contact-form-container">
+                            <div class="content-card">
+                                <h2>Send Us a Message</h2>
+                                <p class="contact-subtitle">Fill out the form below and we'll get back to you as soon as possible.</p>
+                                
+                                <div id="form-success" class="alert alert-success" style="display: none;">
+                                    <i class="fas fa-check-circle"></i>
+                                    <p>Your message has been sent successfully! We'll get back to you soon.</p>
+                                </div>
+                                
+                                <div id="form-error" class="alert alert-error" style="display: none;">
+                                    <i class="fas fa-exclamation-circle"></i>
+                                    <p id="error-message">Please fill in all required fields.</p>
+                                </div>
+                                
+                                <form id="contact-form" class="contact-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="name">Full Name <span class="required">*</span></label>
+                                            <input type="text" id="name" placeholder="Marcellas Indeje" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">Email <span class="required">*</span></label>
+                                            <input type="email" id="email" placeholder="name@example.com" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="subject">Subject <span class="required">*</span></label>
+                                        <input type="text" id="subject" placeholder="How can we help you?" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Message <span class="required">*</span></label>
+                                        <textarea id="message" rows="6" placeholder="Your message here..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block" id="submit-button">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Contact Info -->
+                        <div class="contact-info-container">
+                            <div class="content-card">
+                                <h2>Contact Information</h2>
+                                <p class="contact-subtitle">You can also reach us using the information below.</p>
+                                
+                                <div class="contact-info-list">
+                                    <div class="contact-info-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h3>Our Location</h3>
+                                            <p>Nairobi, Kenya<br>Karen, CUK</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-info-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h3>Email Us</h3>
+                                            <p><a href="mailto:info@learnhub.com">danwits28@gmail.com</a></p>
+                                            <p><a href="mailto:support@learnhub.com">danwits2005@yahoo.com</a></p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-info-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h3>Call Us</h3>
+                                            <p><a href="tel:+254712656502">Normal Call</a></p>
+                                            <p><a href="tel:+254786624882">Whatsapp</a></p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="contact-info-item">
+                                        <div class="contact-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="contact-details">
+                                            <h3>Working Hours</h3>
+                                            <p>24/7</p>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="social-links">
+                                    <h3>Connect With Us</h3>
+                                    <div class="social-icons">
+                                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="https://www.youtube.com/@TechhubSolutions-b2d" class="social-icon"><i class="fab fa-youtube"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+          
+            
+            <section class="faq-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Frequently Asked Questions</h2>
+                        <p>Find answers to common questions about our services.</p>
+                    </div>
+                    
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="1">
+                                <h3>How do I access my purchased materials?</h3>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer" id="faq-1">
+                                <p>After purchasing a material, you can access it immediately in your dashboard. Simply log in to your account, navigate to "My Materials" in your dashboard, and you'll find all your purchased materials there. You can view them online or download them as PDFs for offline use.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="2">
+                                <h3>What payment methods do you accept?</h3>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer" id="faq-2">
+                                <p>We accept various payment methods including credit/debit cards (Visa, MasterCard, American Express) and mobile payment options like M-Pesa. All payments are processed securely, and we never store your full payment details on our servers.</p>
+                            </div>
+                        </div>
+                        
+                       
+                        
+                        <div class="faq-item">
+                            <div class="faq-question" data-faq="4">
+                                <h3>How often are materials updated?</h3>
+                                <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="faq-answer" id="faq-4">
+                                <p>We regularly update our materials to ensure they remain current and relevant. Most materials are updated at least once a year, with some high-demand subjects receiving more frequent updates. When you purchase a material, you get access to all future updates for that specific version.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>TechLearners <span>Hub</span></h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="materials.html">Courses</a></li>
+                            <li><a href="materials.html">Materials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                  
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="https://www.youtube.com/@TechhubSolutions-b2d">Youtube</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> TechLearners Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    // Contact Page JavaScript
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize contact form
+  initContactForm();
+  
+  // Initialize FAQ accordions
+  initFaqAccordions();
+});
+
+// Contact Form Functionality
+function initContactForm() {
+  const contactForm = document.getElementById('contact-form');
+  const submitButton = document.getElementById('submit-button');
+  const formSuccess = document.getElementById('form-success');
+  const formError = document.getElementById('form-error');
+  const errorMessage = document.getElementById('error-message');
+  
+  if (!contactForm) return;
+  
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    // Validate form
+    if (!name || !email || !subject || !message) {
+      showError('Please fill in all required fields.');
+      return;
+    }
+    
+    // Validate email format
+    if (!isValidEmail(email)) {
+      showError('Please enter a valid email address.');
+      return;
+    }
+    
+    // Hide any previous error messages
+    formError.style.display = 'none';
+    
+    // Simulate form submission
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+    
+    // Simulate API call with timeout
+    setTimeout(() => {
+      // Show success message
+      formSuccess.style.display = 'flex';
+      
+      // Reset form
+      contactForm.reset();
+      
+      // Reset button
+      submitButton.textContent = 'Send Message';
+      submitButton.disabled = false;
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => {
+        formSuccess.style.display = 'none';
+      }, 5000);
+    }, 1500);
+  });
+  
+  // Helper function to show error message
+  function showError(message) {
+    errorMessage.textContent = message;
+    formError.style.display = 'flex';
+    
+    // Scroll to error message
+    formError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+  
+  // Helper function to validate email format
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+}
+
+// FAQ Accordion Functionality
+function initFaqAccordions() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+      const faqId = this.getAttribute('data-faq');
+      const answer = document.getElementById(`faq-${faqId}`);
+      
+      // Toggle active class on question
+      this.classList.toggle('active');
+      
+      // Toggle active class on answer
+      answer.classList.toggle('active');
+    });
+  });
+}
+    </script>
+</body>
+</html>

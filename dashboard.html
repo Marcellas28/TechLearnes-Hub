@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TechLearners</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TechLearners</span>Hub
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="materials.html">Courses</a></li>
+                        <li><a href="materials.html">Materials</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="search.html" class="icon-button">
+                        <i class="fas fa-search"></i>
+                        <span class="sr-only">Search</span>
+                    </a>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle">
+                            <div class="avatar">MI</div>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="dashboard.html" class="dropdown-item">Dashboard</a>
+                            <a href="#" class="dropdown-item">Profile</a>
+                            <a href="#" class="dropdown-item">Settings</a>
+                            <div class="dropdown-divider"></div>
+                            <a href="index.html" class="dropdown-item">Sign out</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="dashboard-section">
+                <div class="container">
+                    <div class="dashboard-grid">
+                        <!-- Sidebar -->
+                        <div class="dashboard-sidebar">
+                            <div class="sidebar-card">
+                                <div class="sidebar-header">
+                                    <div class="user-avatar">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="user-info">
+                                        <h3>Marcellas Indeje</h3>
+                                        <p>danwits28@gmail.com</p>
+                                    </div>
+                                </div>
+                                <nav class="sidebar-nav">
+                                    <button class="sidebar-nav-item active" data-tab="materials">
+                                        <i class="fas fa-file-alt"></i> My Materials
+                                    </button>
+                                    <button class="sidebar-nav-item" data-tab="profile">
+                                        <i class="fas fa-user"></i> Profile
+                                    </button>
+                                </nav>
+                                <div class="sidebar-footer">
+                                    <button class="btn btn-outline btn-block" id="sign-out-button">Sign Out</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="dashboard-content">
+                            <div class="dashboard-tab active" id="materials-tab">
+                                <div class="tab-header">
+                                    <h2>Your Purchased Materials</h2>
+                                    <a href="materials.html" class="btn btn-outline">Browse More</a>
+                                </div>
+                                
+                                <div class="purchased-materials" id="purchased-materials-container">
+                                    <!-- Purchased materials will be loaded dynamically -->
+                                </div>
+                            </div>
+                            
+                            <div class="dashboard-tab" id="profile-tab">
+                                <div class="profile-card">
+                                    <h2>Profile Information</h2>
+                                    <p>Manage your account details and preferences</p>
+                                    
+                                    <div class="profile-details">
+                                        <div class="profile-item">
+                                            <label>Full Name</label>
+                                            <div>Marcellas Indeje</div>
+                                        </div>
+                                        <div class="profile-item">
+                                            <label>Email</label>
+                                            <div>danwits28@gmail.com</div>
+                                        </div>
+                                        <div class="profile-item">
+                                            <label>Member Since</label>
+                                            <div>March 10, 2023</div>
+                                        </div>
+                                        <div class="profile-item">
+                                            <label>Materials Purchased</label>
+                                            <div id="materials-count">2</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="profile-footer">
+                                        <button class="btn btn-outline">Edit Profile</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+         <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>TechLearners <span>Hub</span></h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="materials.html">Courses</a></li>
+                            <li><a href="materials.html">Materials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                  
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="https://www.youtube.com/@TechhubSolutions-b2d">Youtube</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> TechLearners Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

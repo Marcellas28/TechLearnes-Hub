@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - LearnHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <div class="container header-container">
+                <a href="index.html" class="logo">
+                    <span class="logo-text">TechLearners</span>Hub
+                </a>
+                <nav class="main-nav">
+                    <ul class="nav-links">
+                        <li><a href="materials.html">Courses</a></li>
+                        <li><a href="materials.html">Materials</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <a href="search.html" class="icon-button active">
+                        <i class="fas fa-search"></i>
+                        <span class="sr-only">Search</span>
+                    </a>
+                    <a href="login.html" class="btn btn-outline">Log in</a>
+                    <a href="signup.html" class="btn btn-primary">Sign up</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h1>Search Materials</h1>
+                        <p>Find the perfect revision materials and exam papers for your studies.</p>
+                    </div>
+
+                    <div class="search-form-container">
+                        <form id="search-form" class="search-form">
+                            <div class="search-input-container">
+                                <i class="fas fa-search"></i>
+                                <input type="search" id="search-input" placeholder="Search by subject, topic, or keyword...">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+
+                    <div id="search-results-header" class="search-results-header" style="display: none;">
+                        <h2 id="results-count">Found 0 results</h2>
+                        <p id="no-results-message" style="display: none;">Try adjusting your search terms or browse our categories below.</p>
+                    </div>
+
+                    <div class="materials-grid" id="search-results-container">
+                    </div>
+
+                    <div class="category-section" id="category-section">
+                        <h2>Browse by Category</h2>
+                        <div class="category-grid" id="category-grid">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+         <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h3>TechLearners <span>Hub</span></h3>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="materials.html">Courses</a></li>
+                            <li><a href="materials.html">Materials</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </div>
+                  
+                    <div class="footer-column">
+                        <h3>Connect</h3>
+                        <ul>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="https://www.youtube.com/@TechhubSolutions-b2d">Youtube</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="current-year"></span> TechLearners Hub. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
